@@ -1,35 +1,40 @@
-This repository contains Python code for exploratory data analysis (EDA) on the weatherAUS.csv dataset. The goal is to understand the dataset, clean it, and visualize relationships among weather features, especially with respect to predicting rainfall.
+## 🌦️ WeatherAUS EDA – Exploratory Data Analysis & Visualization
+# 📌 Project Objective
+This project focuses on performing exploratory data analysis (EDA) on the weatherAUS.csv dataset. The goal is to understand key patterns, clean the dataset, and visualize relationships between weather features to support future machine learning tasks.
 
-# Step 1: Load Dataset
-We use pandas to load the dataset and check the structure using .info() to understand column types and missing values.
+# 🧰 Tools & Libraries Used
+Python
+Pandas – For data loading and manipulation
+Matplotlib & Seaborn – For data visualization
+Plotly Express – For interactive plotting
 
-# Step 2: Basic Exploration
-We view:
+## 🔧 Steps Performed
+# 1. Load the Dataset
+The dataset was loaded and basic information was viewed, including data types and the presence of missing values.
 
-The first few rows (df.head()),
+# 2. Initial Data Exploration
+Basic EDA operations like viewing the first few records, checking statistical summaries, and counting missing values were performed to get an overview of the data.
 
-Descriptive statistics (df.describe()), and
+# 3. Data Cleaning
+Columns with more than 30% missing values were removed. After that, all rows with any remaining null values were dropped to ensure a clean dataset.
 
-The number of missing values in each column (df.isnull().sum()).
+# 4. Rainfall Distribution
+A histogram was plotted to visualize the distribution of rainfall values. This helped in identifying skewness and concentration in lower ranges.
 
-🔹 Step 3: Data Cleaning
-We remove columns with more than 30% missing values.
+# 5. Correlation Matrix
+A heatmap was generated to show correlations between numerical features, highlighting which variables might be important for prediction tasks.
 
-Then, we drop rows that still contain missing data using dropna().
+# 6. Outlier Detection via Boxplot
+A boxplot was created for the MaxTemp feature to visually detect outliers and understand the spread of data.
 
-🔹 Step 4: Rainfall Distribution
-We plot a histogram of the Rainfall column to understand its distribution and skewness.
+# 7. Pairplot by Target Variable
+Selected features were used to generate a pairplot, colored by the RainTomorrow target variable. This allowed us to examine how features relate to each other and how they vary with the target.
 
-🔹 Step 5: Correlation Matrix
-We compute a correlation matrix for numerical columns and use a heatmap to visualize the strength and direction of relationships between features.
+# 8. Interactive Scatter Plot
+An interactive scatter plot was created using Plotly to explore the relationship between afternoon humidity and rainfall, with color indicating whether it rained the next day.
 
-🔹 Step 6: Boxplot for Max Temperature
-A boxplot is used to detect outliers and spread in the MaxTemp column.
-
-🔹 Step 7: Pairplot (Grouped by Rain Tomorrow)
-Using selected features, we create a pairplot (multi-variable scatterplot grid) colored by the RainTomorrow column (binary classification: Yes/No). It helps visualize class separation and feature relationships.
-
-🔹 Step 8: Interactive Scatter Plot
-An interactive Plotly scatter plot shows how Humidity3pm relates to Rainfall, colored by RainTomorrow. This helps in visual pattern detection.
-
-This EDA lays the groundwork for building a predictive model to forecast rain tomorrow using historical weather data.
+# ✅ Outcome
+Cleaned dataset with no missing values
+Visual insights gained on data distributions and correlations
+Categorical target variable (RainTomorrow) mapped and visualized
+Clear foundation established for building predictive models
